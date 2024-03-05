@@ -35,17 +35,35 @@
     position: relative;
     display: flex;
     gap: 5px;
+    h1 {
+      font-size: 64px;
+      font-weight: 400;
+      white-space: nowrap;
+      letter-spacing: -1.9px;
+    }
 
     @media (min-width: 768px) {
       gap: 8px;
       padding-top: 13px;
       margin-bottom: -5px;
+      h1 {
+        font-size: 85px;
+        gap: 25px;
+        line-height: 52px;
+        letter-spacing: -2.55px;
+      }
     }
 
     @media (min-width: 1200px) {
       gap: 15px;
       padding-top: 13px;
       margin-bottom: -5px;
+      h1 {
+        font-size: 125px;
+        gap: 25px;
+        line-height: 52px;
+        letter-spacing: -3.75px;
+      }
     }
 
     @media (min-width: 1920px) {
@@ -53,32 +71,13 @@
       gap: 12px;
       padding: 0 5px;
       margin-top: 115px;
-    }
-    h1 {
-      font-size: 64px;
-      font-weight: 400;
-      white-space: nowrap;
-      letter-spacing: -1.9px;
-      @media (min-width: 768px) {
-        font-size: 85px;
-        gap: 25px;
-        line-height: 52px;
-        letter-spacing: -2.55px;
-      }
-
-      @media (min-width: 1200px) {
-        font-size: 125px;
-        gap: 25px;
-        line-height: 52px;
-        letter-spacing: -3.75px;
-      }
-
-      @media (min-width: 1920px) {
+      h1 {
         font-size: 200px;
         gap: 25px;
         line-height: 124px;
       }
     }
+
     span {
       font-size: 64px;
 

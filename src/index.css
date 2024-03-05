@@ -345,13 +345,6 @@ p {
     margin-top: 0;
   }
 
-  @media (min-width: 768px) {
-    width: unset;
-    font-size: 13px;
-    padding: 8px 12px;
-    line-height: 1.2;
-  }
-
   @media (min-width: 1200px) {
     font-size: 13px;
     padding: 12px 18px;
