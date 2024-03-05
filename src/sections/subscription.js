@@ -1,5 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
 function Subscription() {
   return (
     <section className="section subscription">
@@ -39,23 +37,19 @@ function Subscription() {
             </div>
           </div>
           <div className="subscription__right">
-            <LazyLoadImage
-              alt={"Фото блока подписки"}
-              height={"100%"}
+            <img
+              alt="Фото блока подписки"
+              className="subscription__image"
               src={require("../images/subscription/subscription.png")}
-              width={"100%"}
-              wrapperClassName="subscription__image"
             />
           </div>
         </div>
       </div>
       <div className="subscription__mobile-img">
-        <LazyLoadImage
-          alt={"Фото блока подписки"}
-          height={"100%"}
+        <img
+          alt="Фото блока подписки"
+          className="subscription__image"
           src={require("../images/subscription/subscription.png")}
-          width={"100%"}
-          wrapperClassName="subscription__image"
         />
       </div>
     </section>

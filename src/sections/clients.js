@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Clients() {
   const clients_first = [
@@ -70,12 +69,7 @@ function Clients() {
             {clients_first &&
               clients_first.map((client, index) => (
                 <li className="clients__item" key={client.alias}>
-                  <LazyLoadImage
-                    alt={client.alias}
-                    height={"100%"}
-                    src={client.url}
-                    width={"100%"}
-                  />
+                  <img alt={client.alias} src={client.url} />
                 </li>
               ))}
           </ul>
@@ -83,12 +77,7 @@ function Clients() {
             {clients_second &&
               clients_second.map((client) => (
                 <li className="clients__item" key={client.alias}>
-                  <LazyLoadImage
-                    alt={client.alias}
-                    height={"100%"}
-                    src={client.url}
-                    width={"100%"}
-                  />
+                  <img alt={client.alias} src={client.url} />
                 </li>
               ))}
           </ul>

@@ -1,5 +1,4 @@
 import RoundBtn from "../components/round_btn";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Gallery({ data }) {
   return (
@@ -15,13 +14,12 @@ function Gallery({ data }) {
               data.list.map((item, index) => (
                 <li key={index} className="gallery__item">
                   <div className="gallery__picture">
-                    <LazyLoadImage
+                    <img
+                      className="gallery__img"
                       alt={item.subtitle}
-                      height={"100%"}
                       src={item.pic}
-                      width={"100%"}
-                      wrapperClassName="gallery__img"
                     />
+
                     <a
                       className="gallery__button"
                       href={item.button_url}

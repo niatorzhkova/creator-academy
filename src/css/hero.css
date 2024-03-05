@@ -15,14 +15,13 @@
   }
   @media (min-width: 768px) {
     margin-top: 20px;
-    background: unset;
+    background: none;
     min-height: unset;
     &:before {
       display: none;
     }
     .container {
       flex-direction: row !important;
-      /* padding: 0 !important; */
     }
   }
   @media (min-width: 1200px) {
@@ -56,6 +55,10 @@
       margin-top: 115px;
     }
     h1 {
+      font-size: 64px;
+      font-weight: 400;
+      white-space: nowrap;
+      letter-spacing: -1.9px;
       @media (min-width: 768px) {
         font-size: 85px;
         gap: 25px;
@@ -75,10 +78,6 @@
         gap: 25px;
         line-height: 124px;
       }
-      font-size: 64px;
-      font-weight: 400;
-      white-space: nowrap;
-      letter-spacing: -1.9px;
     }
     span {
       font-size: 64px;

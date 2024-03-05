@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function Reviews({ data }) {
   useEffect(() => {
@@ -49,12 +48,10 @@ function Reviews({ data }) {
                   </div>
                   <div className="review__user">
                     <div className="review__photo">
-                      <LazyLoadImage
-                        alt={"Фотография автора отзыва"}
-                        height={"100%"}
+                      <img
+                        alt="Фотография автора отзыва"
+                        className="gallery__img"
                         src={item.user.photo}
-                        width={"100%"}
-                        wrapperClassName="gallery__img"
                       />
                     </div>
                     <div className="review__user-info">

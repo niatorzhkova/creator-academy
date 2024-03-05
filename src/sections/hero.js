@@ -1,5 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
 function Hero() {
   return (
     <section className="hero">
@@ -46,11 +44,9 @@ function Hero() {
           </div>
         </div>
         <div className="hero__right">
-          <LazyLoadImage
-            alt={"Фото в блоке о курсе"}
-            height={"100%"}
+          <img
+            alt="Фото в блоке о курсе"
             src={require(`../images/hero/hero-bg.webp`)}
-            width={"100%"}
           />
         </div>
       </div>

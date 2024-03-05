@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function WillLearn({ data }) {
   useEffect(() => {
@@ -44,12 +43,10 @@ function WillLearn({ data }) {
               data.list.map((item) => (
                 <li key={item.text} className="learn__item">
                   <div className="learn__picture">
-                    <LazyLoadImage
+                    <img
                       alt={item.text}
-                      height={"100%"}
                       src={item.pic}
-                      width={"100%"}
-                      wrapperClassName="learn__img"
+                      className="learn__img"
                     />
                   </div>
                   <div className="subtitle learn__description bebas">

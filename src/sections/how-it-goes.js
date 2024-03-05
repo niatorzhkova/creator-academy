@@ -1,5 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-
 function HowItGoes({ data }) {
   return (
     <div className="container">
@@ -34,19 +32,15 @@ function HowItGoes({ data }) {
         </div>
         <ul className="how__bottom">
           <li className="how__img-container">
-            <LazyLoadImage
-              alt={"Как проходит обучение"}
-              height={"100%"}
+            <img
               src={require(`../images/how/1.png`)}
-              width={"100%"}
+              alt="Как проходит обучение"
             />
           </li>
           <li className="how__img-container">
-            <LazyLoadImage
-              alt={"Как проходит обучение"}
-              height={"100%"}
+            <img
               src={require(`../images/how/2.png`)}
-              width={"100%"}
+              alt="Как проходит обучение"
             />
           </li>
         </ul>
