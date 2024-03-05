@@ -1,5 +1,6 @@
 {
   "name": "creator-academy",
+  "homepage": "https://niatorzhkova.github.io/creator-academy",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
