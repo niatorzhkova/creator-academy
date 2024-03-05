@@ -1,0 +1,129 @@
+.learn__list {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 15px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    gap: 20px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+.learn__item {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 325px;
+
+  .learn__description {
+    width: 90%;
+    @media (min-width: 768px) {
+      width: unset;
+      gap: 25px;
+    }
+    @media (min-width: 1200px) {
+      width: 81%;
+    }
+  }
+  @media (min-width: 768px) {
+    min-width: unset;
+    gap: 10px;
+    &:nth-child(-n + 2) {
+      flex-basis: calc(50% - 10px);
+    }
+    &:nth-child(3) {
+      flex-basis: calc(55% - 10px);
+    }
+    &:nth-child(4) {
+      flex-basis: calc(45% - 10px);
+    }
+    &:nth-child(n + 5) {
+      flex-basis: calc(33.33% - 10px);
+    }
+    &:nth-child(3) {
+      flex-direction: row;
+      .learn__description {
+        width: 40%;
+      }
+    }
+    &:nth-child(n + 3) {
+      margin-top: 31px;
+    }
+    &:nth-child(6) {
+      margin-top: 62px;
+    }
+    &:nth-child(2n + 5) {
+      margin-top: 62px;
+    }
+  }
+  @media (min-width: 1200px) {
+    min-width: unset;
+    gap: 10px;
+    &:nth-child(-n + 2) {
+      flex-basis: calc(50% - 20px);
+    }
+    &:nth-child(3) {
+      flex-basis: calc(55% - 20px);
+    }
+    &:nth-child(4) {
+      flex-basis: calc(45% - 20px);
+    }
+    &:nth-child(n + 5) {
+      flex-basis: calc(33.33% - 20px);
+    }
+    &:nth-child(3) {
+      flex-direction: row;
+      .learn__description {
+        width: 30%;
+      }
+    }
+    &:nth-child(n + 3) {
+      margin-top: 50px;
+    }
+    &:nth-child(6) {
+      margin-top: 89px;
+    }
+    &:nth-child(2n + 5) {
+      margin-top: 89px;
+    }
+  }
+  @media (min-width: 1920px) {
+    min-width: unset;
+    gap: 10px;
+    &:nth-child(-n + 2) {
+      flex-basis: calc(50% - 25px);
+    }
+    &:nth-child(3) {
+      flex-basis: calc(55% - 25px);
+    }
+    &:nth-child(4) {
+      flex-basis: calc(45% - 25px);
+    }
+    &:nth-child(n + 5) {
+      flex-basis: calc(33.33% - 25px);
+    }
+    &:nth-child(3) {
+      flex-direction: row;
+      .learn__description {
+        width: 40%;
+      }
+    }
+    &:nth-child(n + 3) {
+      margin-top: 80px;
+    }
+    &:nth-child(2n + 5) {
+      margin-top: 145px;
+    }
+  }
+}
