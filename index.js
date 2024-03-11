@@ -62,13 +62,6 @@ function handleClientsScroll(event) {
   }
 }
 page.addEventListener(
-  "wheel",
-  (e) => {
-    handleClientsScroll(e);
-  },
-  { passive: true }
-);
-page.addEventListener(
   "touchmove",
   (e) => {
     handleClientsScroll(e);
