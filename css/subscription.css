@@ -2,6 +2,26 @@
   gap: 0 !important;
 }
 
+.subscription ::-webkit-input-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.subscription ::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.subscription :-ms-input-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
+.subscription ::-ms-input-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+
 .subscription ::placeholder {
   color: #fff;
   opacity: 1;
@@ -22,13 +42,21 @@
 }
 
 .subscription .subscription__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
 @media (min-width: 768px) {
   .subscription .subscription__block {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
     gap: 10px;
     position: relative;
@@ -51,7 +79,12 @@
 
 .subscription .subscription__left {
   padding: 48px 0px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 30px;
 }
@@ -97,8 +130,12 @@
 }
 
 .subscription .subscription__input-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 5px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 

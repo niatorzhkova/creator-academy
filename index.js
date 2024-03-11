@@ -68,13 +68,10 @@ page.addEventListener(
   },
   { passive: true }
 );
-page.addEventListener(
-  "touchmove",
-  (e) => {
-    handleClientsScroll(e);
-  },
-  { passive: true }
-);
+page.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  handleClientsScroll(e);
+});
 
 // Скролл отзывов
 
