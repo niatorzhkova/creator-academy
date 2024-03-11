@@ -163,6 +163,7 @@
   color: #fff;
   font-weight: 500;
   font-size: 14px;
+  border-radius: unset;
 }
 
 .subscription .subscription__input:focus-visible {

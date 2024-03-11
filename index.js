@@ -54,7 +54,7 @@ function handleClientsScroll(event) {
   if (currentScrollScnd > 0 && currentScrollScnd < maxScrollScnd) {
     setTimeout(function () {
       scrollContainerScnd.scrollLeft = currentScrollScnd;
-    }, 500);
+    }, 300);
   } else if (currentScrollScnd <= 0) {
     scrollContainerScnd.scrollLeft = 0;
   } else {
@@ -68,10 +68,13 @@ page.addEventListener(
   },
   { passive: true }
 );
-page.addEventListener("touchmove", (e) => {
-  e.preventDefault();
-  handleClientsScroll(e);
-});
+page.addEventListener(
+  "touchmove",
+  (e) => {
+    handleClientsScroll(e);
+  },
+  { passive: true }
+);
 
 // Скролл отзывов
 
