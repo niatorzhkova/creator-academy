@@ -104,6 +104,7 @@ html,
 .page {
   min-height: 100vh;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -456,7 +457,7 @@ p {
 
 @media (min-width: 768px) {
   .rectangle__button {
-    width: unset;
+    width: fit-content;
     font-size: 9px;
     padding: 8px 12px;
     line-height: 1.2;

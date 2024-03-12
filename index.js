@@ -9,11 +9,47 @@ function handleClickLink(event) {
   });
 }
 
-document.querySelectorAll(".menu__item").forEach((elem) => {
-  elem.addEventListener("click", handleClickLink);
-});
-const bookBtn = document.querySelector(".book-btn");
-bookBtn.addEventListener("click", handleClickLink);
+// document.querySelectorAll(".menu__item").forEach((elem) => {
+//   elem.addEventListener("click", handleClickLink);
+// });
+// const bookBtn = document.querySelector(".book-btn");
+// bookBtn.addEventListener("click", handleClickLink);
+// let inScroll = false;
+// const display = $(".page");
+// const countSectionPosition = (sectionEq) => {
+//   return sectionEq * -100;
+// };
+// const performTransition = (sectionEq) => {
+//   if (inScroll) return;
+
+//   const transitionOver = 1000;
+//   const mouseInertiaOver = 300;
+
+//   inScroll = true;
+
+//   const position = countSectionPosition(sectionEq);
+
+//   display.css({
+//     transform: `translateY(${position}%)`,
+//   });
+
+// sections.eq(sectionEq).addClass("active").siblings().removeClass("active");
+
+// setTimeout(() => {
+//   inScroll = false;
+//   sideMenu.find(".fixed-menu__item").eq(sectionEq).addClass("fixed-menu__item--active").siblings().removeClass("fixed-menu__item--active");
+
+// }, transitionOver + mouseInertiaOver);
+// };
+
+// $(".menu__item").click((e) => {
+//   e.preventDefault();
+
+//   const $this = $(e.currentTarget);
+//   const reqSection = e.currentTarget.dataset.block;
+
+//   performTransition(reqSection);
+// });
 
 // Всплывающее меню
 
@@ -40,36 +76,7 @@ const scrollContainer = document.getElementById("clients-scroll");
 const scrollContainerScnd = document.getElementById("clients-scroll-scnd");
 const page = document.querySelector(".page");
 
-// function handleClientsScroll(event) {
-//   console.log("scroll clients");
-//   // первая строчка клиентов
-//   let maxScroll = scrollContainer.scrollWidth - scrollContainer.offsetWidth;
-//   let currentScroll = scrollContainer.scrollLeft + event.deltaY;
-
-//   if (currentScroll > 0 && currentScroll < maxScroll) {
-//     scrollContainer.scrollLeft = currentScroll;
-//   } else if (currentScroll <= 0) {
-//     scrollContainer.scrollLeft = 0;
-//   } else {
-//     scrollContainer.scrollLeft = maxScroll;
-//   }
-//   // втораястрочка клиентов
-//   let maxScrollScnd =
-//     scrollContainerScnd.scrollWidth - scrollContainerScnd.offsetWidth;
-//   let currentScrollScnd = scrollContainerScnd.scrollLeft + event.deltaY;
-
-//   if (currentScrollScnd > 0 && currentScrollScnd < maxScrollScnd) {
-//     setTimeout(function () {
-//       scrollContainerScnd.scrollLeft = currentScrollScnd;
-//     }, 300);
-//   } else if (currentScrollScnd <= 0) {
-//     scrollContainerScnd.scrollLeft = 0;
-//   } else {
-//     scrollContainerScnd.scrollLeft = maxScrollScnd;
-//   }
-// }
 var owl = $(".owl-carousel");
-// owl.owlCarousel();
 owl.owlCarousel({
   loop: true,
   margin: 0,
@@ -87,10 +94,6 @@ owl.owlCarousel({
     },
   },
 });
-
-// window.addEventListener("wheel", owl.trigger("prev.owl.carousel"), {
-//   passive: true,
-// });
 
 // Скролл отзывов
 
