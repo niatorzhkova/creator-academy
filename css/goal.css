@@ -105,7 +105,7 @@
 
 .goal__quotes-left {
   display: inline-block;
-  top: 0px;
+  top: -5px;
   position: relative;
 }
 
