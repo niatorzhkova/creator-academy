@@ -9,47 +9,11 @@ function handleClickLink(event) {
   });
 }
 
-// document.querySelectorAll(".menu__item").forEach((elem) => {
-//   elem.addEventListener("click", handleClickLink);
-// });
-// const bookBtn = document.querySelector(".book-btn");
-// bookBtn.addEventListener("click", handleClickLink);
-// let inScroll = false;
-// const display = $(".page");
-// const countSectionPosition = (sectionEq) => {
-//   return sectionEq * -100;
-// };
-// const performTransition = (sectionEq) => {
-//   if (inScroll) return;
-
-//   const transitionOver = 1000;
-//   const mouseInertiaOver = 300;
-
-//   inScroll = true;
-
-//   const position = countSectionPosition(sectionEq);
-
-//   display.css({
-//     transform: `translateY(${position}%)`,
-//   });
-
-// sections.eq(sectionEq).addClass("active").siblings().removeClass("active");
-
-// setTimeout(() => {
-//   inScroll = false;
-//   sideMenu.find(".fixed-menu__item").eq(sectionEq).addClass("fixed-menu__item--active").siblings().removeClass("fixed-menu__item--active");
-
-// }, transitionOver + mouseInertiaOver);
-// };
-
-// $(".menu__item").click((e) => {
-//   e.preventDefault();
-
-//   const $this = $(e.currentTarget);
-//   const reqSection = e.currentTarget.dataset.block;
-
-//   performTransition(reqSection);
-// });
+document.querySelectorAll(".menu__item").forEach((elem) => {
+  elem.addEventListener("click", handleClickLink);
+});
+const bookBtn = document.querySelector(".book-btn");
+bookBtn.addEventListener("click", handleClickLink);
 
 // Всплывающее меню
 

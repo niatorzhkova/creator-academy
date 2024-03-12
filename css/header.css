@@ -42,6 +42,7 @@ header {
 }
 
 .menu__item {
+  padding: 22px 0;
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   flex-basis: 50%;
   display: flex;
@@ -54,17 +55,10 @@ header {
   line-height: 1.2;
   letter-spacing: -0.7px;
 }
-.menu__item a {
-  padding: 22px 0;
-  text-align: center;
-  width: 100%;
-  height: 100%;
-}
+
 @media (min-width: 768px) {
   .menu__item {
     font-size: 9px;
-  }
-  .menu__item a {
     padding: 15px 0;
   }
 }
@@ -72,8 +66,6 @@ header {
 @media (min-width: 1200px) {
   .menu__item {
     font-size: 13px;
-  }
-  .menu__item a {
     padding: 23px 0;
   }
 }
@@ -81,8 +73,6 @@ header {
 @media (min-width: 1920px) {
   .menu__item {
     font-size: 20px;
-  }
-  .menu__item a {
     padding: 37px 0;
   }
 }
@@ -127,8 +117,8 @@ header {
 }
 
 .hidden {
-  animation-name: showUp;
-  -webkit-animation-name: showUp;
+  animation-name: hide;
+  -webkit-animation-name: hide;
 
   animation-duration: 0.3s;
   -webkit-animation-duration: 0.3s;
