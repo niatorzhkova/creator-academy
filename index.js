@@ -32,40 +32,65 @@ window.addEventListener("scroll", _.throttle(showFixedBanner, 250));
 
 // Скролл клиентов
 
+$.fn.andSelf = function () {
+  return this.addBack.apply(this, arguments);
+};
+
 const scrollContainer = document.getElementById("clients-scroll");
 const scrollContainerScnd = document.getElementById("clients-scroll-scnd");
 const page = document.querySelector(".page");
 
-function handleClientsScroll(event) {
-  // первая строчка клиентов
-  let maxScroll = scrollContainer.scrollWidth - scrollContainer.offsetWidth;
-  let currentScroll = scrollContainer.scrollLeft + event.deltaY;
+// function handleClientsScroll(event) {
+//   console.log("scroll clients");
+//   // первая строчка клиентов
+//   let maxScroll = scrollContainer.scrollWidth - scrollContainer.offsetWidth;
+//   let currentScroll = scrollContainer.scrollLeft + event.deltaY;
 
-  if (currentScroll > 0 && currentScroll < maxScroll) {
-    scrollContainer.scrollLeft = currentScroll;
-  } else if (currentScroll <= 0) {
-    scrollContainer.scrollLeft = 0;
-  } else {
-    scrollContainer.scrollLeft = maxScroll;
-  }
-  // втораястрочка клиентов
-  let maxScrollScnd =
-    scrollContainerScnd.scrollWidth - scrollContainerScnd.offsetWidth;
-  let currentScrollScnd = scrollContainerScnd.scrollLeft + event.deltaY;
+//   if (currentScroll > 0 && currentScroll < maxScroll) {
+//     scrollContainer.scrollLeft = currentScroll;
+//   } else if (currentScroll <= 0) {
+//     scrollContainer.scrollLeft = 0;
+//   } else {
+//     scrollContainer.scrollLeft = maxScroll;
+//   }
+//   // втораястрочка клиентов
+//   let maxScrollScnd =
+//     scrollContainerScnd.scrollWidth - scrollContainerScnd.offsetWidth;
+//   let currentScrollScnd = scrollContainerScnd.scrollLeft + event.deltaY;
 
-  if (currentScrollScnd > 0 && currentScrollScnd < maxScrollScnd) {
-    setTimeout(function () {
-      scrollContainerScnd.scrollLeft = currentScrollScnd;
-    }, 300);
-  } else if (currentScrollScnd <= 0) {
-    scrollContainerScnd.scrollLeft = 0;
-  } else {
-    scrollContainerScnd.scrollLeft = maxScrollScnd;
-  }
-}
-page.addEventListener("touchmove", (e) => {
-  handleClientsScroll(e);
+//   if (currentScrollScnd > 0 && currentScrollScnd < maxScrollScnd) {
+//     setTimeout(function () {
+//       scrollContainerScnd.scrollLeft = currentScrollScnd;
+//     }, 300);
+//   } else if (currentScrollScnd <= 0) {
+//     scrollContainerScnd.scrollLeft = 0;
+//   } else {
+//     scrollContainerScnd.scrollLeft = maxScrollScnd;
+//   }
+// }
+var owl = $(".owl-carousel");
+// owl.owlCarousel();
+owl.owlCarousel({
+  loop: true,
+  margin: 0,
+  nav: true,
+  navText: [
+    "<i class='fa fa-caret-left'></i>",
+    "<i class='fa fa-caret-right'></i>",
+  ],
+  touchDrag: true,
+  autoplay: 0.5,
+  autoplayHoverPause: true,
+  responsive: {
+    0: {
+      items: 3,
+    },
+  },
 });
+
+// window.addEventListener("wheel", owl.trigger("prev.owl.carousel"), {
+//   passive: true,
+// });
 
 // Скролл отзывов
 
@@ -159,7 +184,6 @@ function stopVideo() {
 }
 
 function handleYoutubeClick(event) {
-  console.log(event.currentTarget.dataset, "target dataset");
   const link = event.currentTarget.dataset.link;
   loadVideo(link);
   const modalOverlay = document.querySelector(".modal-component");

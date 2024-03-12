@@ -8,11 +8,22 @@
   scrollbar-width: none;
 }
 
+.clients__list-desktop {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .clients__list {
     overflow: hidden;
     border-top: 0.43px solid rgba(255, 255, 255, 0.2);
     border-bottom: 0.43px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .clients__list-mobile {
+    display: none;
+  }
+  .clients__list-desktop {
+    display: block;
   }
 
   .clients__list:first-child {
@@ -35,7 +46,6 @@
 }
 
 .clients__item {
-  min-width: 140px;
   height: auto;
 }
 

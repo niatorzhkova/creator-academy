@@ -1,4 +1,6 @@
 .hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   min-height: 615px;
   position: relative;
@@ -27,6 +29,9 @@
   }
 
   .hero .container {
+    -webkit-box-orient: horizontal !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: row !important;
     flex-direction: row !important;
   }
 }
@@ -45,6 +50,8 @@
 
 .hero .hero__title {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 5px;
 }
@@ -198,7 +205,12 @@
   font-size: 12px;
   font-weight: 500;
   max-width: 640px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 17px;
   margin-top: 5px;
@@ -228,8 +240,15 @@
 }
 
 .hero .hero__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
   justify-content: flex-end;
   height: 100%;
   gap: 8px;
@@ -239,6 +258,8 @@
   .hero .hero__left {
     width: 50%;
     padding-top: 32px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
     justify-content: space-between;
     gap: 6px;
   }
@@ -247,6 +268,8 @@
 @media (min-width: 1200px) {
   .hero .hero__left {
     padding-top: 65px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
     gap: 45px;
   }
@@ -256,6 +279,8 @@
   .hero .hero__left {
     padding-top: 0;
     gap: 10px;
+    -webkit-box-pack: unset;
+    -ms-flex-pack: unset;
     justify-content: unset;
   }
 }
