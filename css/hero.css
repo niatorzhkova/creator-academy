@@ -317,3 +317,15 @@
     padding-bottom: 0;
   }
 }
+
+.hero__play-btn {
+  display: none;
+}
+@media (min-width: 768px) {
+  .hero__play-btn {
+    display: block;
+    position: absolute;
+    bottom: 20%;
+    left: 46%;
+  }
+}

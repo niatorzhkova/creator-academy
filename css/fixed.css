@@ -13,7 +13,7 @@
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
 }
 
 @media (min-width: 768px) {
@@ -105,6 +105,20 @@
   -webkit-transition: 0.6s;
   -o-transition: 0.6s;
   transition: 0.6s;
+}
+
+.fixed .play-btn svg {
+  width: 16px;
+  height: 16px;
+  -webkit-transform: translateX(2px);
+  -ms-transform: translateX(2px);
+  transform: translateX(2px);
+}
+
+@media (min-width: 768px) {
+  .fixed .play-btn {
+    display: none;
+  }
 }
 
 .fixed .auth__btn:hover {

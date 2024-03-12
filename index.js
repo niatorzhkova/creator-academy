@@ -28,7 +28,19 @@ function showFixedBanner() {
   }
 }
 
-window.addEventListener("scroll", _.throttle(showFixedBanner, 250));
+function throttle(callee, timeout) {
+  let timer = null;
+  return function perform(...args) {
+    if (timer) return;
+    timer = setTimeout(() => {
+      callee(...args);
+      clearTimeout(timer);
+      timer = null;
+    }, timeout);
+  };
+}
+
+window.addEventListener("scroll", throttle(showFixedBanner, 250), false);
 
 // Скролл клиентов
 
