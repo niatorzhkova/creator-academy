@@ -31,8 +31,6 @@
 
 .footer .footer__top {
   display: flex;
-  gap: 50px;
-  row-gap: 50px;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
@@ -42,8 +40,6 @@
   .footer .footer__top {
     justify-content: space-between;
     flex-direction: row;
-    gap: 0;
-    row-gap: 0;
   }
 }
 
@@ -89,12 +85,14 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  margin-bottom: 50px;
 }
 
 @media (min-width: 768px) {
   .footer .footer__mail,
   .footer .footer__logo {
     gap: 5px;
+    margin-bottom: 0;
   }
 }
 
