@@ -31,7 +31,7 @@
 @import url(css/documents.css);
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @font-face {
   font-family: "Bebas Neue";
   src: local("Bebas Neue Thin"), local("BebasNeue-Thin"),
@@ -81,7 +81,6 @@
   font-weight: 700;
   font-style: normal;
 }
-
 @font-face {
   font-family: "Dita Sweet";
   src: local("Dita Sweet"), local("DitaSweet"),
@@ -421,7 +420,8 @@ p {
 }
 
 .bebas {
-  font-family: "Bebas Neue";
+  font-family: "Bebas Neue", sans-serif;
+  font-style: normal;
 }
 
 .montserrat {
