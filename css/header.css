@@ -117,8 +117,8 @@ header {
 }
 
 .hidden {
-  animation-name: hide;
-  -webkit-animation-name: hide;
+  animation-name: showUp;
+  -webkit-animation-name: showUp;
 
   animation-duration: 0.3s;
   -webkit-animation-duration: 0.3s;
