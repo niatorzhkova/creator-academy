@@ -6,6 +6,17 @@
   display: inline-block;
 }
 
+.goal__quotes-left {
+  display: inline-block;
+  top: 0px;
+  position: relative;
+}
+
+.goal__author {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
 @media (min-width: 768px) {
   .goal__text {
     font-size: 55px;
@@ -101,15 +112,4 @@
   .goal__quotes-right {
     bottom: 77px;
   }
-}
-
-.goal__quotes-left {
-  display: inline-block;
-  top: -5px;
-  position: relative;
-}
-
-.goal__author {
-  -ms-flex-item-align: end;
-  align-self: flex-end;
 }
