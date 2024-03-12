@@ -61,7 +61,9 @@ function handleClientsScroll(event) {
     scrollContainerScnd.scrollLeft = maxScrollScnd;
   }
 }
-window.addEventListener("touchmove", _.throttle(handleClientsScroll, 100));
+window.addEventListener("touchmove", (e) => {
+  _.throttle(handleClientsScroll(e), 150);
+});
 
 // Скролл отзывов
 
