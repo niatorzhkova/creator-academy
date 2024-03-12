@@ -10,6 +10,7 @@
   display: inline-block;
   top: 0px;
   position: relative;
+  height: inherit;
 }
 
 .goal__author {
