@@ -2,9 +2,11 @@
 
 function handleClickLink(event) {
   const block = event.currentTarget.dataset.block;
-  document
-    .getElementById(block)
-    .scrollIntoView({ behavior: "smooth", inline: "center", block: "start" });
+  seamless.scrollIntoView(document.getElementById(block), {
+    behavior: "smooth",
+    inline: "center",
+    block: "start",
+  });
 }
 
 document.querySelectorAll(".menu__item").forEach((elem) => {
@@ -61,8 +63,8 @@ function handleClientsScroll(event) {
     scrollContainerScnd.scrollLeft = maxScrollScnd;
   }
 }
-window.addEventListener("touchmove", (e) => {
-  _.throttle(handleClientsScroll(e), 150);
+page.addEventListener("touchmove", (e) => {
+  handleClientsScroll(e);
 });
 
 // Скролл отзывов
