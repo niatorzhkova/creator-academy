@@ -150,7 +150,7 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player("player", {
     height: "100%",
     width: "100%",
-    videoId: "",
+    videoId: "cA3xM_3t9N4",
   });
 }
 
@@ -165,19 +165,19 @@ function handleYoutubeClick(event) {
   modalOverlay.setAttribute("style", "display:block;");
 }
 function loadVideo(videoId) {
-  player.loadVideoByUrl(videoId);
-  player.playVideo();
+  player?.loadVideoByUrl?.(videoId);
+  player?.playVideo?.();
 }
 function handleCloseModal(event) {
   stopVideo();
   const modalOverlay = document.querySelector(".modal-component");
   modalOverlay.setAttribute("style", "display:none;");
 }
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".play-btn").forEach((elem) => {
-    elem.addEventListener("click", handleYoutubeClick);
-  });
+// document.addEventListener("DOMContentLoaded", () => {
+document.querySelectorAll(".play-btn").forEach((elem) => {
+  elem.addEventListener("click", handleYoutubeClick);
 });
+// });
 
 document.querySelectorAll(".modal__close").forEach((elem) => {
   elem.addEventListener("click", handleCloseModal);
