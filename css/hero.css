@@ -321,6 +321,7 @@
 .hero__play-btn {
   display: none;
 }
+
 @media (min-width: 768px) {
   .hero__play-btn {
     display: block;
