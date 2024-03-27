@@ -2,7 +2,9 @@
 
 function handleClickLink(event) {
   const block = event.currentTarget.dataset.block;
-  seamless.scrollIntoView(document.getElementById(block), {
+  const scrollToBlock = document.getElementById(block);
+  scrollToBlock.style.scrollMargin = "100px";
+  seamless.scrollIntoView(scrollToBlock, {
     behavior: "smooth",
     inline: "center",
     block: "start",
