@@ -99,6 +99,16 @@
   color: #fff;
 }
 
+.rates .individual .rate__item:first-child p {
+  opacity: 100%;
+  color: #fff;
+}
+
+.rates .individual .rate__item:nth-child(5) p {
+  opacity: 100%;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .rates .individual .rate__top {
     gap: 31px;
