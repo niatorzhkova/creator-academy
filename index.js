@@ -81,30 +81,32 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-box.addEventListener("mousedown", (e) => {
-  isDown = true;
-  startX = e.pageX - box.offsetLeft;
-  scrollLeft = box.scrollLeft;
-  box.style.cursor = "grabbing";
-});
+if (box) {
+  box.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - box.offsetLeft;
+    scrollLeft = box.scrollLeft;
+    box.style.cursor = "grabbing";
+  });
 
-box.addEventListener("mouseleave", () => {
-  isDown = false;
-  box.style.cursor = "grab";
-});
+  box.addEventListener("mouseleave", () => {
+    isDown = false;
+    box.style.cursor = "grab";
+  });
 
-box.addEventListener("mouseup", () => {
-  isDown = false;
-  box.style.cursor = "grab";
-});
+  box.addEventListener("mouseup", () => {
+    isDown = false;
+    box.style.cursor = "grab";
+  });
 
-document.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - box.offsetLeft;
-  const walkX = x - startX;
-  box.scrollLeft = scrollLeft - walkX;
-});
+  document.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - box.offsetLeft;
+    const walkX = x - startX;
+    box.scrollLeft = scrollLeft - walkX;
+  });
+}
 
 // Скролл "Вы научитесь"
 
@@ -183,4 +185,30 @@ document.querySelectorAll(".play-btn").forEach((elem) => {
 
 document.querySelectorAll(".modal__close").forEach((elem) => {
   elem.addEventListener("click", handleCloseModal);
+});
+
+// Гамбургер-меню
+
+const menu = document.querySelector(".menu");
+const menuItems = document.querySelectorAll(".menuItem");
+const hamburger = document.querySelector(".hamburger");
+const closeIcon = document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener("click", toggleMenu);
 });
