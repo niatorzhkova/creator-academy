@@ -324,15 +324,19 @@
   line-height: 1.1;
 }
 
-.video-left__icon {
+/* .video-left__icon {
   align-self: flex-end;
   -ms-flex-item-align: end;
   align-self: flex-end;
-}
+} */
 
 .ham-menu__video__left {
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .ham-menu__video__right {
