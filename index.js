@@ -171,6 +171,7 @@ function loadVideo(videoId) {
 }
 function handleCloseModal(event) {
   stopVideo();
+  iframe.src = videoId;
   const modalOverlay = document.querySelector(".modal-component");
   modalOverlay.setAttribute("style", "display:none;");
 }
