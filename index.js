@@ -54,24 +54,30 @@ const scrollContainer = document.getElementById("clients-scroll");
 const scrollContainerScnd = document.getElementById("clients-scroll-scnd");
 const page = document.querySelector(".page");
 
-var owl = $(".owl-carousel");
-owl.owlCarousel({
-  loop: true,
-  margin: 0,
-  nav: true,
-  navText: [
-    "<i class='fa fa-caret-left'></i>",
-    "<i class='fa fa-caret-right'></i>",
-  ],
-  touchDrag: true,
-  autoplay: 0.5,
-  autoplayHoverPause: true,
-  responsive: {
-    0: {
-      items: 3,
-    },
-  },
-});
+try {
+  $(document).ready(function () {
+    const owl = $(".clients__list-mobile-carousel");
+    owl.owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      navText: [
+        "<i class='fa fa-caret-left'></i>",
+        "<i class='fa fa-caret-right'></i>",
+      ],
+      touchDrag: true,
+      autoplay: 0.5,
+      autoplayHoverPause: true,
+      responsive: {
+        0: {
+          items: 3,
+        },
+      },
+    });
+  });
+} catch (e) {
+  console.log(e);
+}
 
 // Скролл отзывов
 
@@ -81,30 +87,32 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
-box.addEventListener("mousedown", (e) => {
-  isDown = true;
-  startX = e.pageX - box.offsetLeft;
-  scrollLeft = box.scrollLeft;
-  box.style.cursor = "grabbing";
-});
+if (box) {
+  box.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - box.offsetLeft;
+    scrollLeft = box.scrollLeft;
+    box.style.cursor = "grabbing";
+  });
 
-box.addEventListener("mouseleave", () => {
-  isDown = false;
-  box.style.cursor = "grab";
-});
+  box.addEventListener("mouseleave", () => {
+    isDown = false;
+    box.style.cursor = "grab";
+  });
 
-box.addEventListener("mouseup", () => {
-  isDown = false;
-  box.style.cursor = "grab";
-});
+  box.addEventListener("mouseup", () => {
+    isDown = false;
+    box.style.cursor = "grab";
+  });
 
-document.addEventListener("mousemove", (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - box.offsetLeft;
-  const walkX = x - startX;
-  box.scrollLeft = scrollLeft - walkX;
-});
+  document.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - box.offsetLeft;
+    const walkX = x - startX;
+    box.scrollLeft = scrollLeft - walkX;
+  });
+}
 
 // Скролл "Вы научитесь"
 
@@ -139,36 +147,27 @@ document.addEventListener("mousemove", (e) => {
   boxLearn.scrollLeft = scrollLeftLearn - walkXLearn;
 });
 
-// Youtube player
+// VK player
 
-var tag = document.createElement("script");
+const iframe = document.getElementById("player");
 
-tag.src = "https://www.youtube.com/player_api";
-var firstScriptTag = document.getElementsByTagName("script")[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-var player;
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player("player", {
-    height: "100%",
-    width: "100%",
-    videoId: "cA3xM_3t9N4",
-  });
-}
+const player = VK.VideoPlayer(iframe);
 
 function stopVideo() {
-  player.stopVideo();
+  player.pause();
 }
 
-function handleYoutubeClick(event) {
-  const link = event.currentTarget.dataset.link;
+function handleVideoClick(event) {
+  const link = `${event.currentTarget.dataset.link}&js_api=1`;
   loadVideo(link);
   const modalOverlay = document.querySelector(".modal-component");
   modalOverlay.setAttribute("style", "display:block;");
 }
 function loadVideo(videoId) {
-  player?.loadVideoByUrl?.(videoId);
-  player?.playVideo?.();
+  // player?.loadVideoByUrl?.(videoId);
+  console.log(player, "player");
+  iframe.src = videoId;
+  player?.play();
 }
 function handleCloseModal(event) {
   stopVideo();
@@ -177,10 +176,68 @@ function handleCloseModal(event) {
 }
 // document.addEventListener("DOMContentLoaded", () => {
 document.querySelectorAll(".play-btn").forEach((elem) => {
-  elem.addEventListener("click", handleYoutubeClick);
+  elem.addEventListener("click", handleVideoClick);
 });
 // });
 
 document.querySelectorAll(".modal__close").forEach((elem) => {
   elem.addEventListener("click", handleCloseModal);
 });
+
+// Гамбургер-меню
+
+const menu = document.querySelector(".menu");
+const menuItems = document.querySelectorAll(".menuItem");
+const hamburger = document.querySelector(".hamburger");
+const closeIcon = document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
+menuItems.forEach(function (menuItem) {
+  menuItem.addEventListener("click", toggleMenu);
+});
+
+try {
+  $(document).ready(function () {
+    var owl = $(".gallery__list");
+    owl.owlCarousel({
+      loop: true,
+      margin: 0,
+      dots: false,
+      touchDrag: true,
+      responsive: {
+        0: {
+          items: 1,
+          margin: 50,
+        },
+        768: {
+          items: 4,
+          margin: 5,
+        },
+        1200: {
+          items: 4,
+          margin: 10,
+        },
+        1920: {
+          items: 4,
+          margin: 20,
+        },
+      },
+    });
+  });
+} catch (e) {
+  console.log(e);
+}

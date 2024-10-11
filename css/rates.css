@@ -94,17 +94,17 @@
   gap: 10px;
 }
 
-.rates .individual .rate__item:last-child p {
-  opacity: 100%;
-  color: #fff;
-}
-
 .rates .individual .rate__item:first-child p {
   opacity: 100%;
   color: #fff;
 }
 
-.rates .individual .rate__item:nth-child(5) p {
+.rates .individual .rate__item:last-child p {
+  opacity: 100%;
+  color: #fff;
+}
+
+.rates .individual .rate__item:nth-child(7) p {
   opacity: 100%;
   color: #fff;
 }
@@ -216,5 +216,10 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+  }
+}
+@media (min-width: 768px) {
+  .rates__block .rectangle__button {
+    margin-top: 0;
   }
 }
