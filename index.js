@@ -162,8 +162,11 @@ try {
     function handleVideoClick(event) {
       const link = `${event.currentTarget.dataset.link}&js_api=1`;
       loadVideo(link);
-      const modalOverlay = document.querySelector(".modal-component");
-      modalOverlay.setAttribute("style", "display:block;");
+      player?.on("started", () => {
+        console.log("started");
+        const modalOverlay = document.querySelector(".modal-component");
+        modalOverlay.setAttribute("style", "display:block;");
+      });
     }
     function loadVideo(videoId) {
       iframe.src = videoId;
