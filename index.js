@@ -148,42 +148,43 @@ document.addEventListener("mousemove", (e) => {
 });
 
 // VK player
+try {
+  $(document).ready(function () {
+    const iframe = document.getElementById("player");
 
-const iframe = document.getElementById("player");
+    const player = VK.VideoPlayer(iframe);
 
-const player = VK.VideoPlayer(iframe);
+    function stopVideo() {
+      player?.pause();
+    }
 
-function stopVideo() {
-  player.pause();
+    function handleVideoClick(event) {
+      const link = `${event.currentTarget.dataset.link}&js_api=1`;
+      loadVideo(link);
+      const modalOverlay = document.querySelector(".modal-component");
+      modalOverlay.setAttribute("style", "display:block;");
+    }
+    function loadVideo(videoId) {
+      iframe.src = videoId;
+      player?.play();
+    }
+    function handleCloseModal(event) {
+      stopVideo();
+      const modalOverlay = document.querySelector(".modal-component");
+      modalOverlay.setAttribute("style", "display:none;");
+    }
+
+    document.querySelectorAll(".play-btn").forEach((elem) => {
+      elem.addEventListener("click", handleVideoClick);
+    });
+
+    document.querySelectorAll(".modal__close").forEach((elem) => {
+      elem.addEventListener("click", handleCloseModal);
+    });
+  });
+} catch (e) {
+  console.log(e);
 }
-
-function handleVideoClick(event) {
-  const link = `${event.currentTarget.dataset.link}&js_api=1`;
-  loadVideo(link);
-  const modalOverlay = document.querySelector(".modal-component");
-  modalOverlay.setAttribute("style", "display:block;");
-}
-function loadVideo(videoId) {
-  // player?.loadVideoByUrl?.(videoId);
-  console.log(player, "player");
-  iframe.src = videoId;
-  player?.play();
-}
-function handleCloseModal(event) {
-  stopVideo();
-  iframe.src = videoId;
-  const modalOverlay = document.querySelector(".modal-component");
-  modalOverlay.setAttribute("style", "display:none;");
-}
-// document.addEventListener("DOMContentLoaded", () => {
-document.querySelectorAll(".play-btn").forEach((elem) => {
-  elem.addEventListener("click", handleVideoClick);
-});
-// });
-
-document.querySelectorAll(".modal__close").forEach((elem) => {
-  elem.addEventListener("click", handleCloseModal);
-});
 
 // Гамбургер-меню
 
