@@ -156,6 +156,7 @@ try {
 
     function stopVideo() {
       player?.pause();
+      iframe.src = `&js_api=1`;
     }
 
     function handleVideoClick(event) {
