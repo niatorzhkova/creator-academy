@@ -167,6 +167,7 @@ try {
     }
     function loadVideo(videoId) {
       iframe.src = videoId;
+      player.seek(0);
       player?.play();
     }
     function handleCloseModal(event) {
