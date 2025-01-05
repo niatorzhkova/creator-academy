@@ -188,6 +188,7 @@ try {
   console.log(e);
 }
 
+// try git
 // Гамбургер-меню
 
 const menu = document.querySelector(".menu");
